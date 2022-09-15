@@ -1,0 +1,6 @@
+name: JoinAndLeavePlugin
+version: '${project.version}'
+main: me.shadow_warrior_.joinandleaveplugin.JoinAndLeavePlugin
+api-version: 1.16
+authors: [ shadow_warrior_ ]
+description: Join and leave messages with color
