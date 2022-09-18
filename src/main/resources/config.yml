@@ -1,0 +1,6 @@
+#Message when a player joins the server
+Join: 'Welcome back to the server'
+#Message when a player joins the server for the first time
+Firstjoin: 'Has joined the server for the first time'
+#Message when a player leaves the server
+Leave: 'Has left, lets hope they come back'
