@@ -8,6 +8,9 @@ public final class JoinAndLeavePlugin extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         getServer().getPluginManager().registerEvents(new JoinLeaveListener(),this);
+        //Setup Config
+        getConfig().options().copyDefaults();
+        saveDefaultConfig();
     }
 
     @Override

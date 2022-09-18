@@ -9,19 +9,25 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 public class JoinLeaveListener implements Listener {
 
+    JoinAndLeavePlugin plugin = JoinAndLeavePlugin.getPlugin(JoinAndLeavePlugin.class);
+
     @EventHandler
     public void onJoin(PlayerJoinEvent e){
         Player player = e.getPlayer();
+        String join = plugin.getConfig().getString("Join");
+        String fjoin = plugin.getConfig().getString("Firstjoin");
 
         if (player.hasPlayedBefore()){
-            e.setJoinMessage(ChatColor.WHITE + "" + ChatColor.BOLD + player.getDisplayName() + ChatColor.GREEN + " Welcome back to the server");
-        }else e.setJoinMessage(ChatColor.RED + "" + ChatColor.BOLD + player.getDisplayName() + ChatColor.GREEN + " Has joined the server for the first time");
+            e.setJoinMessage(ChatColor.WHITE + "" + ChatColor.BOLD + player.getDisplayName() + ChatColor.GREEN + join);
+        }else e.setJoinMessage(ChatColor.RED + "" + ChatColor.BOLD + player.getDisplayName() + ChatColor.GREEN + fjoin);
     }
 
     @EventHandler
     public void onLeave(PlayerQuitEvent e){
         Player player = e.getPlayer();
-        e.setQuitMessage(ChatColor.WHITE + "" + ChatColor.BOLD + player.getDisplayName() + ChatColor.GREEN + " Has left, let's hope they come back");
+        String leave = plugin.getConfig().getString("Leave");
+
+        e.setQuitMessage(ChatColor.WHITE + "" + ChatColor.BOLD + player.getDisplayName() + ChatColor.GREEN + leave);
 
     }
 
